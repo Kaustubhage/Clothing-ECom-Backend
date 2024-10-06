@@ -19,7 +19,7 @@ public class CategoryController {
     }
 
     @GetMapping("/{category-id}")
-    public ResponseEntity<Object> getCategoryById(@RequestParam("category-id") Long categoryId) {
+    public ResponseEntity<Object> getCategoryById(@PathVariable("category-id") Long categoryId) {
         return ResponseEntity.ok().body(categoryService.getCategoryById(categoryId));
     }
 
@@ -30,14 +30,12 @@ public class CategoryController {
     }
 
     @PutMapping("/{category-id}")
-    public ResponseEntity<Object> updateCategoryById(@RequestParam("category-id") Long categoryId, @RequestBody CategoryRequest categoryRequest) {
+    public ResponseEntity<Object> updateCategoryById(@PathVariable("category-id") Long categoryId, @RequestBody CategoryRequest categoryRequest) {
         return ResponseEntity.ok().body(categoryService.updateCategoryById(categoryId, categoryRequest));
     }
 
     @DeleteMapping("/{category-id}")
-    public ResponseEntity<Object> deleteCategoryById(@RequestParam("category-id") Long categoryId) {
+    public ResponseEntity<Object> deleteCategoryById(@PathVariable("category-id") Long categoryId) {
         return ResponseEntity.ok().body(categoryService.deleteCategoryById(categoryId));
     }
-
-
 }

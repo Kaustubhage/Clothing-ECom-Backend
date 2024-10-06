@@ -61,7 +61,7 @@ public class ProductService {
 
     public Page<Product> getProductsByCategory(Long categoryId, int pageNo, int pageSize) {
         Pageable pageable = PageRequest.of(pageNo, pageSize);
-        return productRepository.findByCategoryId(pageable);
+        return productRepository.findByCategoryId(categoryId, pageable);
     }
 
     public Page<Product> getProducts(int pageNo, int pageSize) {

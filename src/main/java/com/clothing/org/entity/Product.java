@@ -13,6 +13,7 @@ public class Product {
     private Integer price;
     private Integer size;
     private Gender gender;
+    @ManyToOne
     @JoinColumn(name = "categoryId")
     private Category category;
 }
